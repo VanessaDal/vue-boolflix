@@ -5,25 +5,22 @@
 // Lingua
 // Voto
 
-let apiMoviesSrc='https://api.themoviedb.org/3/search/movie?api_key=f69a0829649e9f60281050c3f802d0c58&query="';
+let apiMoviesSrc='https://api.themoviedb.org/3/search/movie?api_key=f69a0829649e9f60281050c3f802d0c5&query=';
 
-let  posterUrl = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2';
+let posterUrl = 'https://image.tmdb.org/t/p/w185';
 
 var app = new Vue ({
     el: '#app',
     data: {
+        movies:[],
+        search:""
 
-        movies=[],
-        search=""
         },
-
-
     methods: {
 
         searchMovie: function() {
             apiMoviesSrc = apiMoviesSrc + this.search;
-            axios.get(apiMoviesSrc)
-            .then(movie => {
+            axios.get(apiMoviesSrc).then(movie => {
                 this.movies = movie.data.results;
             })            
         }

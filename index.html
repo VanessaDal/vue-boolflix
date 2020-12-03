@@ -25,11 +25,13 @@
 
             <ul>
                 <li v-for='(movie, index) in movies'
-                class=>
-                    <img :src="posterUrl + movie.poster_path" alt="poster film">
-                    <div class="">
-                        <p>{{movie.title}}</p>
-                        <p>{{movie.original_title}}</p>
+                class="small-containers">
+                    <!-- <img :src="posterUrl + movie.poster_path" alt="poster film">
+                    <div class=""> -->
+                        <p>Titolo: {{movie.title}}</p>
+                        <p>Titolo originale: {{movie.original_title}}</p>
+                        <p>Lingua: {{movie.original_language}}</p>
+                        <p>Voto: {{vote_average}}</p>
                     </div>
                 </li>
             </ul>
