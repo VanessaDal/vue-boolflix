@@ -18,12 +18,13 @@
     <div class="container">
         <div id="app" class="app" >
             <div>
-                <input v-model='search' placeholder="Cerca un film" @keyup.enter=searchMovie type="text">
+                <input v-model='search' placeholder="Cerca un film o una serie TV" @keyup.enter="searchMovie(); searchSerie()" type="text">
 
-                <button @click=searchMovie>
+                <button @click="searchMovie(); searchSerie()">
                 Cerca
                 </button>
               </div>
+              <!-- movies -->
             <div class="pre-containers">
                     <div v-for='(movie, index) in movies'
                     class="small-containers">
@@ -33,6 +34,21 @@
                             <p>Titolo originale: {{movie.original_title}}</p>
                             <p>Lingua: {{movie.original_language}}</p>
                             <p>Voto: {{movie.vote_average}}</p>
+                        
+                        </div>
+                    </div>
+            </div>
+
+            <!-- tv series -->
+                <div class="pre-containers">
+                    <div v-for='(serie, index) in series'
+                    class="small-containers">
+                        <img :src="'https://image.tmdb.org/t/p/w185' + serie.poster_path" alt="poster serie">
+                        <div class="">
+                            <p>Titolo: {{serie.title}}</p>
+                            <p>Titolo originale: {{serie.original_title}}</p>
+                            <p>Lingua: {{serie.original_language}}</p>
+                            <p>Voto: {{serie.vote_average}}</p>
                         
                         </div>
                     </div>

@@ -7,11 +7,14 @@
 
 let apiMoviesSrc='https://api.themoviedb.org/3/search/movie?api_key=f69a0829649e9f60281050c3f802d0c5&query=';
 
+let apiTvSrc='https://api.themoviedb.org/3/search/tv?api_key=f69a0829649e9f60281050c3f802d0c5&query='
+
 
 var app = new Vue ({
     el: '#app',
     data: {
         movies:[],
+        series:[],
         search:""
 
         },
@@ -28,12 +31,24 @@ var app = new Vue ({
                      
         },
 
+        searchSerie:function(){
+            this.reset();
+            apiTvSrc = apiTvSrc + this.search;
+            axios.get(apiTvSrc).then(serie => {
+                this.series = serie.data.results;
+                 
+                this.rating(this.movies.vote_average)
+            })
+        },
+
         rating:function(vote){
             return vote=Math.ceil(vote/2)
         },
 
-        reset:function(){
+        reset:function(i){
             apiMoviesSrc='https://api.themoviedb.org/3/search/movie?api_key=f69a0829649e9f60281050c3f802d0c5&query='
+
+            apiTvSrc='https://api.themoviedb.org/3/search/tv?api_key=f69a0829649e9f60281050c3f802d0c5&query='
         }
     }
     })
