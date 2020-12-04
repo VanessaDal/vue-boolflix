@@ -24,10 +24,16 @@ var app = new Vue ({
             this.reset();
             apiMoviesSrc = apiMoviesSrc + this.search;
             axios.get(apiMoviesSrc).then(movie => {
-                this.movies = movie.data.results;
-                 
-                this.rating(this.movies.vote_average)
+                // this.movies = movie.data.results;
+                let movies = movie.data.results.map(item => {
+                    //posso assegnare a chi voglio il valore che ritorna la funzione mettendo la variabile davanti
+                    item.vote_average = this.rating(item.vote_average)
+                    return item; //ritorno l'oggetto che verrà messo nell'array movies
+                  })
+                  this.movies = movies;
+         
             })
+
                      
         },
 
@@ -37,12 +43,18 @@ var app = new Vue ({
             axios.get(apiTvSrc).then(serie => {
                 this.series = serie.data.results;
                  
-                this.rating(this.movies.vote_average)
+                let series = serie.data.results.map(item => {
+                    //posso assegnare a chi voglio il valore che ritorna la funzione mettendo la variabile davanti
+                    item.vote_average = this.rating(item.vote_average)
+                    return item; //ritorno l'oggetto che verrà messo nell'array movies
+                  })
+                  this.series = series;
+         
             })
         },
 
         rating:function(vote){
-            return vote=Math.ceil(vote/2)
+            return Math.ceil(vote/2)
         },
 
         reset:function(i){
