@@ -41,7 +41,7 @@ var app = new Vue ({
             this.reset();
             apiTvSrc = apiTvSrc + this.search;
             axios.get(apiTvSrc).then(serie => {
-                this.series = serie.data.results;
+                // this.series = serie.data.results;
                  
                 let series = serie.data.results.map(item => {
                     //posso assegnare a chi voglio il valore che ritorna la funzione mettendo la variabile davanti

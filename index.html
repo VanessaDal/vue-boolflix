@@ -25,7 +25,7 @@
                 </button>
               </div>
               <!-- movies -->
-            <div class="pre-containers">
+            <div class="pre-containers"> MOVIES
                     <div v-for='(movie, index) in movies'
                     class="small-containers">
                         <img :src="'https://image.tmdb.org/t/p/w185' + movie.poster_path" alt="poster film">
@@ -33,14 +33,17 @@
                             <p>Titolo: {{movie.title}}</p>
                             <p>Titolo originale: {{movie.original_title}}</p>
                             <p>Lingua: {{movie.original_language}}</p>
-                            <p>Voto: {{movie.vote_average}}</p>
+                            <div> <i v-for='star in movies[index].vote_average'  class="fas fa-star">
+                            </i>
+                            <i v-for='star in (5 - movies[index].vote_average)' class="far fa-star">
+                            </i>Voto: {{movie.vote_average}}</div>
                         
                         </div>
                     </div>
             </div>
 
             <!-- tv series -->
-                <div class="pre-containers">
+                <div class="pre-containers"> Serie TV
                     <div v-for='(serie, index) in series'
                     class="small-containers">
                         <img :src="'https://image.tmdb.org/t/p/w185' + serie.poster_path" alt="poster serie">
