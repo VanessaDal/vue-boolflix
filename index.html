@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
   <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -33,10 +33,8 @@
                             <p>Titolo: {{movie.title}}</p>
                             <p>Titolo originale: {{movie.original_title}}</p>
                             <p>Lingua: {{movie.original_language}}</p>
-                            <div> <i v-for='star in movies[index].vote_average'  class="fas fa-star">
-                            </i>
-                            <i v-for='star in (5 - movies[index].vote_average)' class="far fa-star">
-                            </i>Voto: {{movie.vote_average}}</div>
+                            <div>Voto: <i v-for='star in movies[index].vote_average'  class="fas fa-star" alt="movies[index].vote_average">
+                            </i><i v-for='star in (5 - movies[index].vote_average)' class="far fa-star"></i></div>
                         
                         </div>
                     </div>
@@ -51,7 +49,8 @@
                             <p>Titolo: {{serie.title}}</p>
                             <p>Titolo originale: {{serie.original_title}}</p>
                             <p>Lingua: {{serie.original_language}}</p>
-                            <p>Voto: {{serie.vote_average}}</p>
+                            <div>Voto: <i v-for='star in series[index].vote_average'  class="fas fa-star" alt="series[index].vote_average">
+                            </i><i v-for='star in (5 - series[index].vote_average)' class="far fa-star"></i></div>
                         
                         </div>
                     </div>
