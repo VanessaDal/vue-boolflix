@@ -7,8 +7,6 @@
 
 let apiMoviesSrc='https://api.themoviedb.org/3/search/movie?api_key=f69a0829649e9f60281050c3f802d0c5&query=';
 
-let rating
-
 
 var app = new Vue ({
     el: '#app',
@@ -20,15 +18,22 @@ var app = new Vue ({
     methods: {
 
         searchMovie: function() {
+            this.reset();
             apiMoviesSrc = apiMoviesSrc + this.search;
             axios.get(apiMoviesSrc).then(movie => {
                 this.movies = movie.data.results;
                  
+                this.rating(this.movies.vote_average)
             })
                      
         },
-        rating:function(vote_average){
-            return rating=Math.ceil(vote_average/2)
+
+        rating:function(vote){
+            return vote=Math.ceil(vote/2)
+        },
+
+        reset:function(){
+            apiMoviesSrc='https://api.themoviedb.org/3/search/movie?api_key=f69a0829649e9f60281050c3f802d0c5&query='
         }
     }
     })

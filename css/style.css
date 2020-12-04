@@ -23,13 +23,15 @@ body {
   margin: 50px;
   background-color: #2e3a46;
   height: 300px;
-  width: 250px;
+  width: 20%;
   border: 1px solid black;
 }
 
 .pre-containers {
+  width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .small-containers img {
