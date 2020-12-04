@@ -12,17 +12,26 @@ body {
 .container {
   height: 100%;
   background-color: #1e2d3b;
+}
+
+.app {
   display: flex;
-  justify-content: space-between;
+  align-items: space-between;
 }
 
 .small-containers {
+  margin: 50px;
   background-color: #2e3a46;
-  height: 200px;
+  height: 300px;
   width: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border: 1px solid black;
+}
+
+.pre-containers {
+  display: flex;
+  justify-content: center;
+}
+
+.small-containers img {
+  height: 150px;
 }

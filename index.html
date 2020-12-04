@@ -16,26 +16,27 @@
 
 <body>
     <div class="container">
-        <div id="app" >
-            <input v-model='search' placeholder="Cerca un film" @keyup.enter=searchMovie type="text">
+        <div id="app" class="app" >
+            <div>
+                <input v-model='search' placeholder="Cerca un film" @keyup.enter=searchMovie type="text">
 
-            <button @click=searchMovie>
-            Cerca
-            </button>
-
-            <ul>
-                <li v-for='(movie, index) in movies'
-                class="small-containers">
-                    <!-- <img :src="posterUrl + movie.poster_path" alt="poster film">
-                    <div class=""> -->
-                        <p>Titolo: {{movie.title}}</p>
-                        <p>Titolo originale: {{movie.original_title}}</p>
-                        <p>Lingua: {{movie.original_language}}</p>
-                        <p>Voto: {{vote_average}}</p>
+                <button @click=searchMovie>
+                Cerca
+                </button>
+              </div>
+            <div class="pre-containers">
+                    <div v-for='(movie, index) in movies'
+                    class="small-containers">
+                        <img :src="'https://image.tmdb.org/t/p/w185' + movie.poster_path" alt="poster film">
+                        <div class="">
+                            <p>Titolo: {{movie.title}}</p>
+                            <p>Titolo originale: {{movie.original_title}}</p>
+                            <p>Lingua: {{movie.original_language}}</p>
+                            <p>Voto: movie.vote_average}}</p>
+                        
+                        </div>
                     </div>
-                </li>
-            </ul>
-
+            </div>
         </div>
     </div>
 
