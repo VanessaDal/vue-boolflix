@@ -37,3 +37,7 @@ body {
 .small-containers img {
   height: 150px;
 }
+
+.small-containers p img {
+  height: 20px;
+}

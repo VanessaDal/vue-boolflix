@@ -25,6 +25,7 @@
                 </button>
               </div>
               <!-- movies -->
+  
             <div class="pre-containers"> MOVIES
                     <div v-for='(movie, index) in movies'
                     class="small-containers">
@@ -32,9 +33,13 @@
                         <div class="">
                             <p>Titolo: {{movie.title}}</p>
                             <p>Titolo originale: {{movie.original_title}}</p>
-                            <p>Lingua: {{movie.original_language}}</p>
-                            <div>Voto: <i v-for='star in movies[index].vote_average'  class="fas fa-star" alt="movies[index].vote_average">
-                            </i><i v-for='star in (5 - movies[index].vote_average)' class="far fa-star"></i></div>
+                            <p>Lingua: <img :src="
+                                'img/' + movie.original_language + '.png'
+                            "></p>
+                            <div>Voto: 
+                                <i v-for='star in movie.vote_average'  class="fas fa-star" alt="movie.vote_average">
+                                </i>
+                                <i v-for='star in (5 - movie.vote_average)' class="far fa-star"></i></div>
                         
                         </div>
                     </div>
@@ -48,7 +53,7 @@
                         <div class="">
                             <p>Titolo: {{serie.title}}</p>
                             <p>Titolo originale: {{serie.original_title}}</p>
-                            <p>Lingua: {{serie.original_language}}</p>
+                            <p>Lingua: <img :src="'img/' + serie.original_language + '.png'" alt="serie.original_language"></p>
                             <div>Voto: <i v-for='star in series[index].vote_average'  class="fas fa-star" alt="series[index].vote_average">
                             </i><i v-for='star in (5 - series[index].vote_average)' class="far fa-star"></i></div>
                         

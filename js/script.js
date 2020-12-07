@@ -23,14 +23,14 @@ var app = new Vue ({
         searchMovie: function() {
             this.reset();
             apiMoviesSrc = apiMoviesSrc + this.search;
-            axios.get(apiMoviesSrc).then(movie => {
+            axios.get(apiMoviesSrc).then(movies => {
                 // this.movies = movie.data.results;
-                let movies = movie.data.results.map(item => {
+                let processed_movies = movies.data.results.map(item => {
                     //posso assegnare a chi voglio il valore che ritorna la funzione mettendo la variabile davanti
                     item.vote_average = this.rating(item.vote_average)
                     return item; //ritorno l'oggetto che verrà messo nell'array movies
                   })
-                  this.movies = movies;
+                  this.movies = processed_movies;
          
             })
 
