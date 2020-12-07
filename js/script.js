@@ -31,6 +31,9 @@ var app = new Vue ({
                     return item; //ritorno l'oggetto che verrà messo nell'array movies
                   })
                   this.movies = processed_movies;
+                //   if (this.movies.poster_path===null){
+                //     this.movies.poster_path=
+                //   }
          
             })
 
