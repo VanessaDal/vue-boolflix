@@ -51,16 +51,40 @@ header .logo {
   align-items: space-between;
 }
 
+.categories {
+  height: 30px;
+  width: 100%;
+  margin-top: 80px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
+.categories :first-child {
+  padding-top: 10px;
+  padding-left: 270px;
+}
+
+.categories :nth-child(2) {
+  padding-top: 10px;
+  padding-right: 260px;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+}
+
 .small-containers {
-  margin: 50px;
+  margin: 40px;
   background-color: #2e3a46;
-  height: 300px;
-  width: 20%;
+  min-height: 300px;
+  width: 30%;
   border: 1px solid black;
 }
 
 .pre-containers {
-  width: calc(100% - 200px);
+  width: 45%;
   margin-top: 100px;
   display: flex;
   justify-content: center;

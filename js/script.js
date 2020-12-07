@@ -28,12 +28,15 @@ var app = new Vue ({
                 let processed_movies = movies.data.results.map(item => {
                     //posso assegnare a chi voglio il valore che ritorna la funzione mettendo la variabile davanti
                     item.vote_average = this.rating(item.vote_average)
+                        if (item.poster_path===null){
+                          item.poster_path="img/keep-calm-poster-not-found.png";
+                        }
+                        else{
+                            item.poster_path='https://image.tmdb.org/t/p/w185' + item.poster_path;
+                        }
                     return item; //ritorno l'oggetto che verrà messo nell'array movies
                   })
                   this.movies = processed_movies;
-                //   if (this.movies.poster_path===null){
-                //     this.movies.poster_path=
-                //   }
          
             })
 
@@ -48,7 +51,13 @@ var app = new Vue ({
                  
                 let series = serie.data.results.map(item => {
                     //posso assegnare a chi voglio il valore che ritorna la funzione mettendo la variabile davanti
-                    item.vote_average = this.rating(item.vote_average)
+                    item.vote_average = this.rating(item.vote_average);
+                    if (item.poster_path===null){
+                        item.poster_path="img/keep-calm-poster-not-found.png";
+                      }
+                      else{
+                          item.poster_path='https://image.tmdb.org/t/p/w185' + item.poster_path;
+                      }
                     return item; //ritorno l'oggetto che verrà messo nell'array movies
                   })
                   this.series = series;
