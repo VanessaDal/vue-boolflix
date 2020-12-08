@@ -89,14 +89,18 @@ section {
   height: 300px;
   width: 200px;
   border: 1px solid black;
+  overflow: hidden;
 }
 
 .small-containers:hover {
   background: black;
+  height: 300px;
+  width: 200px;
 }
 
 .info {
   opacity: 0;
+  overflow: hidden;
 }
 
 .info:hover {
@@ -104,9 +108,10 @@ section {
   display: flex;
   flex-direction: column;
   align-content: space-between;
-  color: red;
+  color: white;
   overflow: auto;
-  height: 280px;
+  height: 300px;
+  width: 200px;
   cursor: pointer;
 }
 

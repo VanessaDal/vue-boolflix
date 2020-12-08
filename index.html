@@ -60,8 +60,8 @@
                                 class="small-containers">
                                     <img :src="serie.poster_path" alt="poster serie">
                                     <div class="info">
-                                        <p>Titolo: {{serie.title}}</p>
-                                        <p>Titolo originale: {{serie.original_title}}</p>
+                                        <p>Titolo: {{serie.name}}</p>
+                                        <p>Titolo originale: {{serie.original_name}}</p>
                                         <p>Overview: {{serie.overview}}</p>
                                         <p>Lingua: <img :src="'img/' + serie.original_language + '.png'" alt=""></p>
                                         <div>Voto: <i v-for='star in series[index].vote_average'  class="fas fa-star" alt="series[index].vote_average">
