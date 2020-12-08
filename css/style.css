@@ -78,9 +78,13 @@ section {
 .small-containers {
   margin: 40px;
   background-color: #2e3a46;
-  min-height: 300px;
+  height: 300px;
   width: 30%;
   border: 1px solid black;
+}
+
+.small-containers:hover {
+  background: black;
 }
 
 .pre-containers {
@@ -91,8 +95,21 @@ section {
   flex-wrap: wrap;
 }
 
+.info {
+  display: none;
+}
+
+.info:hover {
+  display: inline-block;
+  color: red;
+}
+
 .small-containers img {
-  height: 150px;
+  height: 300px;
+}
+
+.small-containers img:hover {
+  height: 0;
 }
 
 .small-containers p img {
