@@ -101,13 +101,13 @@ section {
 .info {
   opacity: 0;
   overflow: hidden;
+  padding: 0 10px;
+  line-height: 1.2;
 }
 
 .info:hover {
   opacity: 1;
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
+
   color: white;
   overflow: auto;
   height: 300px;
