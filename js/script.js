@@ -56,7 +56,7 @@ var app = new Vue ({
                         item.poster_path="img/keep-calm-poster-not-found.png";
                       }
                       else{
-                          item.poster_path='https://image.tmdb.org/t/p/w185' + item.poster_path;
+                          item.poster_path='https://image.tmdb.org/t/p/w342' + item.poster_path;
                       }
                     return item; //ritorno l'oggetto che verrà messo nell'array movies
                   })
