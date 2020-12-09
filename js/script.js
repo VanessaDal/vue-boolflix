@@ -5,9 +5,9 @@
 // Lingua
 // Voto
 
-let apiMoviesSrc='https://api.themoviedb.org/3/search/movie?api_key=f69a0829649e9f60281050c3f802d0c5&query=';
+const apiMoviesSrc='https://api.themoviedb.org/3/search/movie?api_key=f69a0829649e9f60281050c3f802d0c5&query=';
 
-let apiTvSrc='https://api.themoviedb.org/3/search/tv?api_key=f69a0829649e9f60281050c3f802d0c5&query='
+const apiTvSrc='https://api.themoviedb.org/3/search/tv?api_key=f69a0829649e9f60281050c3f802d0c5&query='
 
 
 var app = new Vue ({

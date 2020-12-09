@@ -58,6 +58,7 @@ header .logo {
   position: absolute;
   display: flex;
   justify-content: space-between;
+  color: white;
 }
 
 .categories :first-child {
