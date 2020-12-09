@@ -40,11 +40,15 @@
                             <img :src="movie.poster_path" alt="poster film">
                             <div class="info">
                                 <p>Titolo: {{movie.title}}</p>
+                                <br>
                                 <p>Titolo originale: {{movie.original_title}}</p>
+                                <br>
                                 <p>Overview: {{movie.overview}}</p>
+                                <br>
                                 <p>Lingua: <img :src="
                                     'img/' + movie.original_language + '.png'
                                 "></p>
+                                <br>
                                 <div>Voto: 
                                     <i v-for='star in movie.vote_average'  class="fas fa-star" alt="movie.vote_average">
                                     </i><i v-for='star in (5 - movie.vote_average)' class="far fa-star"></i></div>
@@ -61,9 +65,13 @@
                                     <img :src="serie.poster_path" alt="poster serie">
                                     <div class="info">
                                         <p>Titolo: {{serie.name}}</p>
+                                        <br>
                                         <p>Titolo originale: {{serie.original_name}}</p>
+                                        <br>
                                         <p>Overview: {{serie.overview}}</p>
+                                        <br>
                                         <p>Lingua: <img :src="'img/' + serie.original_language + '.png'" alt=""></p>
+                                        <br>
                                         <div>Voto: <i v-for='star in series[index].vote_average'  class="fas fa-star" alt="series[index].vote_average">
                                         </i><i v-for='star in (5 - series[index].vote_average)' class="far fa-star"></i></div>
                                     
